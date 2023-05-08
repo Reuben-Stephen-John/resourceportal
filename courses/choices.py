@@ -1,0 +1,17 @@
+CHOICE_SCHOOL=[
+    ('SAS','SAS'),
+    ('SITE','SITE'),
+    ('V-SIGN','V-SIGN'),
+    ('SSL','SSL'),
+    ('SENSE','SENSE'),
+    ('SCE','SCE'),
+    ('SBST','SBST'),
+    ('VAIAL','VAIAL'),
+    ('VIT BS','VIT BS'),
+    ('SCOPE','SCOPE'),
+    ('V-SPARC','V-SPARC'),
+    ('SMEC','SMEC'),
+    ('SELECT','SELECT'),
+    ('SCHEME','SCHEME'),
+    ('HOT','HOT'),
+]
