@@ -1,2 +1,2 @@
 from rest_framework import serializers
-from .models import Course,Modules
+from .models import Course,Module
