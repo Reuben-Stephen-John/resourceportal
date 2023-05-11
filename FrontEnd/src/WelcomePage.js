@@ -4,7 +4,8 @@ import Navbar from './components/Navbar';
 const WelcomePage = () => {
   return (
     <div className="page">
-        <Navbar/>  
+      <Navbar /> 
+      
     </div>
   );
 }

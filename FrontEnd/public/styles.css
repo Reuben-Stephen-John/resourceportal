@@ -1,50 +1,55 @@
-.body{
-    background-color:rgb(189, 248, 248) ;
-}
+/* .body {
+  background-color: rgb(189, 248, 248);
+} */
 
 .animation-container {
-    display: flex;
-    justify-content: flex-end;
-    background-color:  #ffffff;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #ffffff;
 }
 
+.HomePage {
+  height: calc(100vh - 10vh - 10vh);
+}
 .navbar {
-    background-color: #f1f1f1;
-    padding: 10px;
-    background-color: rgb(189, 248, 248);
+  background-color: #f1f1f1;
+  padding: 10px;
+  background-color: rgb(189, 248, 248);
 }
-  
+
 .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
 }
-  
+
 .navbar-logo {
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: #333;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #333;
 }
-  
+
 .navbar-menu {
-    list-style: none;
-    display: flex;
-    margin: 10px;
+  list-style: none;
+  display: flex;
+  margin: 10px;
 }
-  
+
 .navbar-item {
-    margin-left: 50px;
-    
+  margin-left: 50px;
 }
-  
+
 .navbar-link {
-    text-decoration: none;
-    color: #333;
-    border-radius: 10px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 10px;
 }
-  
-  
 
-
-  
+body {
+  height: 80vh;
+}
+footer {
+  height: 10vh;
+  background-color: rgb(189, 248, 248);
+}
