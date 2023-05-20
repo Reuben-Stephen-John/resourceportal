@@ -1,6 +1,6 @@
 from rest_framework import generics,permissions
 from courses.models import Course,Module
-from .serializers import CourseSerializer,ModuleSerializer
+from .serializers import CourseSerializer,ModuleSerializer,CourseModuleSerializer
 
 # Create your views here.
 class CourseList(generics.ListAPIView):
@@ -14,6 +14,10 @@ class ModuleList(generics.ListAPIView):
     serializer_class = ModuleSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
+class CourseModule(generics.ListAPIView):
+    queryset = Course.objects.all()
+    serializer_class = CourseModuleSerializer
+    lookup_field = 'id'
 
 
 
