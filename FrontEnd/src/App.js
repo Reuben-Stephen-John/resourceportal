@@ -6,17 +6,6 @@ import SearchforCourses from './page/searchCourses.page'
 import { useEffect, useState } from 'react'
 
 const App = () => {
-  const [courses, setCourses] = useState([])
-
-  useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/courses')
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error))
-  }, [])
-
-  console.log(courses)
-
   return (
     <Routes>
       <Route path="/" element={<HomePage />}></Route>
