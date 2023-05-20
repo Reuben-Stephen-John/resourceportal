@@ -29,13 +29,13 @@ const features = [
 
 export default function Feature() {
   return (
-    <div className="bg-gradient-to-tr from-white to-orange-100 dark:bg-orange-900 overflow-hidden bg-white py-24 sm:py-32">
-      <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
+    <div className="bg-gradient-to-tr from-white to-orange-100 dark:bg-orange-900 overflow-hidden bg-white py-5 sm:py-32">
+      <div className="grid max-w-screen-xl place-content-center mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
         <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
           <Lottie animationData={animation2} loop={true} />
         </div>
-        <div className="mr-auto px-20 place-self-center lg:col-span-6">
-            <div className="lg:max-w-lg">
+        <div className="mr-auto px-10 place-self-center lg:col-span-6">
+            <div className="lg:max-w-lx">
               <h2 className="text-base font-semibold leading-7 text-indigo-600">
                 StudySphere
               </h2>
