@@ -1,9 +1,8 @@
-import { LinkIcon } from "@heroicons/react/24/outline";
 import NavBar from "../components/NavBar.component";
 import { Link } from "react-router-dom";
 
 import Lottie from "lottie-react";
-import animationfourofour from "../components/abc.json";
+import animationfourofour from "../components/animation2.json";
 
 const FourOFour = () => {
   return (

@@ -3,6 +3,7 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar.component";
+import CourseCard from "../components/courseCard.component";
 
 const navigation = [
   { name: "Home", href: "#" },
@@ -27,6 +28,7 @@ export default function SearchforCourses() {
       {/* <NavBar /> */}
       <div className="bg-white">
         <NavBar />
+
         <div className="relative isolate px-6 pt-1 lg:px-8">
           <div
             className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-0"
@@ -100,7 +102,14 @@ export default function SearchforCourses() {
                   </button>
                 </form>
               </div>
-              <div className="px-5 py-5">
+              <div className="flex justify-center px-5 py-5">
+                <div class="grid grid-cols-3 gap-10">
+                  <CourseCard />
+                  <CourseCard />
+                  <CourseCard />
+                </div>
+              </div>
+              {/* <div className="px-5 py-5">
                 <Link
                   to="/courses/coursePage"
                   type="button"
@@ -120,13 +129,9 @@ export default function SearchforCourses() {
                 >
                   Computer Networks
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
-          <div
-            className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-            aria-hidden="true"
-          ></div>
         </div>
       </div>
     </>
