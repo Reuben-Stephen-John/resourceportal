@@ -15,6 +15,7 @@ export default function SearchforCourses() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const [courses, setCourses] = useState([]);
+  
 
   useEffect(() => {
     fetch("http://127.0.0.1:8000/api/courses")
@@ -109,27 +110,6 @@ export default function SearchforCourses() {
                   <CourseCard />
                 </div>
               </div>
-              {/* <div className="px-5 py-5">
-                <Link
-                  to="/courses/coursePage"
-                  type="button"
-                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                >
-                  Probability & Statistics
-                </Link>
-                <button
-                  type="button"
-                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                >
-                  Design and Analysis of Algoritms
-                </button>
-                <button
-                  type="button"
-                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                >
-                  Computer Networks
-                </button>
-              </div> */}
             </div>
           </div>
         </div>
