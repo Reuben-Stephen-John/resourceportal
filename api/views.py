@@ -11,7 +11,7 @@ class CourseSearchAPIView(APIView):
         query = request.query_params.get('search', '')
         courses = Course.objects.filter(
             Q(course_lookup__icontains=query)
-        )
+        )[:10]
         serializer = CourseSerializer(courses, many=True)
         return Response(serializer.data)
 

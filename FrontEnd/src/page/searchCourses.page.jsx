@@ -5,36 +5,34 @@ import axios from "axios";
 
 export default function SearchforCourses() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredCourses, setFilteredCourses] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
-    // Fetch courses from the API and update the filteredCourses state
-    fetchCourses();
-  }, []);
+    const delaySearch = setTimeout(() => {
+      if (searchQuery) {
+        searchCourses();
+      } else {
+        setSearchResults([]);
+      }
+    }, 500); // Adjust the debounce delay as per your needs
 
-  const fetchCourses = async () => {
+    return () => clearTimeout(delaySearch);
+  }, [searchQuery]);
+
+  const searchCourses = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:8000/api/courses");
-      setFilteredCourses(response.data);
+      const response = await axios.get(
+        `http://127.0.0.1:8000/api/courses/?search=${searchQuery}`
+      );
+      setSearchResults(response.data);
     } catch (error) {
-      console.error("Error fetching courses:", error);
+      console.error("Error searching courses:", error);
     }
   };
 
   const handleSearch = (event) => {
-    const newSearchQuery = event.target.value;
-    setSearchQuery(newSearchQuery);
-    filterCourses(newSearchQuery);
+    setSearchQuery(event.target.value);
   };
-
-const filterCourses = (searchQuery) => {
-  const filtered = filteredCourses
-    .filter((course) =>
-      course.course_lookup.toLowerCase().includes(searchQuery.toLowerCase())
-    )
-    .slice(0, 5); // Limit to the first 5 items
-  setFilteredCourses(filtered);
-};
 
   return (
     <>
@@ -90,7 +88,7 @@ const filterCourses = (searchQuery) => {
                       value={searchQuery}
                       onChange={handleSearch}
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      placeholder="Search"
+                      placeholder="Search courses..."
                       required
                     />
                   </div>
@@ -117,14 +115,12 @@ const filterCourses = (searchQuery) => {
                 </form>
               </div>
               <div className="flex justify-center px-5 py-5">
-                <div className="grid sm:grid-cols-3 gap-10">
-                  <ul>
-                    {filteredCourses.map((course) => (
-                      <li key={course.id}>
-                        {course.course_code} - {course.course_name}
-                      </li>
+                <div className="grid sm:grid-cols-3 gap-4">
+                    {searchResults.map((course) => (
+                      <div key={course.id}>
+                         <CourseCard courseCode={course.course_code} courseTitle={course.course_name} courseId ={course.id}/>
+                      </div>
                     ))}
-                  </ul>
                 </div>
               </div>
             </div>
