@@ -1,6 +1,21 @@
 from rest_framework import generics,permissions
 from courses.models import Course,Module
 from .serializers import CourseSerializer,ModuleSerializer,CourseModuleSerializer
+from django.db.models import Q
+from django.shortcuts import get_object_or_404
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+class CourseSearchAPIView(APIView):
+    def get(self, request):
+        query = request.query_params.get('search', '')
+        courses = Course.objects.filter(
+            Q(course_lookup__icontains=query)
+        )
+        serializer = CourseSerializer(courses, many=True)
+        return Response(serializer.data)
+
+
 
 # Create your views here.
 class CourseList(generics.ListAPIView):

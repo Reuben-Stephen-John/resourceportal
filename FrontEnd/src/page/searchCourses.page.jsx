@@ -1,23 +1,40 @@
-import { useEffect } from "react";
 import NavBar from "../components/NavBar.component";
 import CourseCard from "../components/courseCard.component";
-
-import axios, { isCancel, AxiosError } from "axios";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function SearchforCourses() {
-  axios
-    .get("http://127.0.0.1:8000/api/courses")
-    .then(function (response) {
-      // handle succes
-      console.log(response);
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    .finally(function () {
-      // always executed
-    });
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredCourses, setFilteredCourses] = useState([]);
+
+  useEffect(() => {
+    // Fetch courses from the API and update the filteredCourses state
+    fetchCourses();
+  }, []);
+
+  const fetchCourses = async () => {
+    try {
+      const response = await axios.get("http://127.0.0.1:8000/api/courses");
+      setFilteredCourses(response.data);
+    } catch (error) {
+      console.error("Error fetching courses:", error);
+    }
+  };
+
+  const handleSearch = (event) => {
+    const newSearchQuery = event.target.value;
+    setSearchQuery(newSearchQuery);
+    filterCourses(newSearchQuery);
+  };
+
+const filterCourses = (searchQuery) => {
+  const filtered = filteredCourses
+    .filter((course) =>
+      course.course_lookup.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    .slice(0, 5); // Limit to the first 5 items
+  setFilteredCourses(filtered);
+};
 
   return (
     <>
@@ -70,6 +87,8 @@ export default function SearchforCourses() {
                     <input
                       type="text"
                       id="simple-search"
+                      value={searchQuery}
+                      onChange={handleSearch}
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="Search"
                       required
@@ -99,9 +118,13 @@ export default function SearchforCourses() {
               </div>
               <div className="flex justify-center px-5 py-5">
                 <div className="grid sm:grid-cols-3 gap-10">
-                  <CourseCard />
-                  <CourseCard />
-                  <CourseCard />
+                  <ul>
+                    {filteredCourses.map((course) => (
+                      <li key={course.id}>
+                        {course.course_code} - {course.course_name}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
