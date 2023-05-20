@@ -104,7 +104,7 @@ export default function SearchforCourses() {
                 </form>
               </div>
               <div className="flex justify-center px-5 py-5">
-                <div class="grid grid-cols-3 gap-10">
+                <div class="grid sm:grid-cols-3 gap-10">
                   <CourseCard />
                   <CourseCard />
                   <CourseCard />
