@@ -1,12 +1,22 @@
-import WelcomePage from "./WelcomePage";
+import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './page/homepage.page'
+import CoursesPage from './page/courses.page'
+import SearchforCourses from './page/searchCourses.page'
+import { useEffect, useState } from 'react'
+import FourOFour from './page/404.pages'
+import AboutPage from './page/about.pages'
 
-
-function App() {
+const App = () => {
   return (
-   <>
-    <WelcomePage/>
-   </>
-  );
+    <Routes>
+      <Route path="/" element={<HomePage />}></Route>
+      <Route path="courses/" element={<SearchforCourses />}></Route>
+      <Route path="courses/coursePage" element={<CoursesPage />}></Route>
+      <Route path="/404" element={<FourOFour />}></Route>
+      <Route path="/about" element={<AboutPage />}></Route>
+    </Routes>
+  )
 }
 
-export default App;
+export default App
