@@ -1,32 +1,26 @@
-import { useEffect, useState } from "react";
-import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import NavBar from "../components/NavBar.component";
 import CourseCard from "../components/courseCard.component";
 
-const navigation = [
-  { name: "Home", href: "#" },
-  { name: "About", href: "#" },
-  { name: "Courses", href: "#" },
-];
+import axios, { isCancel, AxiosError } from "axios";
 
 export default function SearchforCourses() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const [courses, setCourses] = useState([]);
-  
-
-  useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/courses")
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error));
-  }, []);
+  axios
+    .get("http://127.0.0.1:8000/api/courses")
+    .then(function (response) {
+      // handle succes
+      console.log(response);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .finally(function () {
+      // always executed
+    });
 
   return (
     <>
-      {/* <NavBar /> */}
       <div className="bg-white">
         <NavBar />
 
@@ -104,7 +98,7 @@ export default function SearchforCourses() {
                 </form>
               </div>
               <div className="flex justify-center px-5 py-5">
-                <div class="grid sm:grid-cols-3 gap-10">
+                <div className="grid sm:grid-cols-3 gap-10">
                   <CourseCard />
                   <CourseCard />
                   <CourseCard />
