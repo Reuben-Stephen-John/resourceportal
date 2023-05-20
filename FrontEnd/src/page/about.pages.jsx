@@ -26,7 +26,7 @@ const AboutPage = () => {
               </a>
               <div class="p-5">
                 <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  <a href="#">Bonnie Green</a>
+                  <a href="#">Reuben Stephen John</a>
                 </h3>
                 <span class="text-gray-500 dark:text-gray-400">
                   CEO & Web Developer
@@ -121,7 +121,7 @@ const AboutPage = () => {
               </a>
               <div class="p-5">
                 <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  <a href="#">Jese Leos</a>
+                  <a href="#">Yash Jain</a>
                 </h3>
                 <span class="text-gray-500 dark:text-gray-400">CTO</span>
                 <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">
@@ -214,7 +214,7 @@ const AboutPage = () => {
               </a>
               <div class="p-5">
                 <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  <a href="#">Michael Gough</a>
+                  <a href="#">Pranav Jayaraj</a>
                 </h3>
                 <span class="text-gray-500 dark:text-gray-400">
                   Senior Front-end Developer
@@ -309,7 +309,7 @@ const AboutPage = () => {
               </a>
               <div class="p-5">
                 <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  <a href="#">Lana Byrd</a>
+                  <a href="#">Shyam Sundhar</a>
                 </h3>
                 <span class="text-gray-500 dark:text-gray-400">
                   Marketing & Sale
