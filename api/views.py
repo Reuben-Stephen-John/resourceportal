@@ -14,10 +14,10 @@ class ModuleList(generics.ListAPIView):
     serializer_class = ModuleSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
-class CourseModule(generics.ListAPIView):
+class CourseModule(generics.RetrieveAPIView):
     queryset = Course.objects.all()
     serializer_class = CourseModuleSerializer
-    lookup_field = 'id'
+    lookup_field = 'pk'
 
 
 

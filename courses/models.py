@@ -2,15 +2,13 @@ import uuid
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
-from .choices import *
 
 # Create your models here.
 class Course(models.Model):
     course_code=models.CharField(max_length=10)
-    course_title=models.CharField(max_length=100)
-    school=models.CharField(max_length=100,choices=CHOICE_SCHOOL)
-    credits_no=models.FloatField(validators=[MaxValueValidator(4),MinValueValidator(1)])
-
+    course_name=models.CharField(max_length=100)
+    course_component=models.CharField(max_length=100)
+    course_lookup=models.CharField(max_length=200)
     def __str__(self):
         return self.course_code
 

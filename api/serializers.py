@@ -10,10 +10,10 @@ class ModuleSerializer(serializers.ModelSerializer):
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
-        fields = ['id','course_code','course_title','school','credits_no']
+        fields = ['id','course_code','course_name','course_component','course_lookup']
 
 class CourseModuleSerializer(serializers.ModelSerializer):
     modules = ModuleSerializer(many=True, read_only=True)
     class Meta:
         model = Course
-        fields = ['id', 'course_code', 'course_title', 'modules']
+        fields = ['id', 'course_code', 'course_name', 'modules']

@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'courses',
+    'api',
     'rest_framework',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +84,7 @@ DATABASES = {
     }
 }
 
-
+IMPORT_EXPORT_USE_TRANSACTIONS = True
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
