@@ -33,7 +33,7 @@ const AboutPage = () => {
                   <a>Reuben Stephen John</a>
                 </h3>
                 <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">
-                In the realm of possibilities, imagination becomes the catalyst for extraordinary achievements.
+                In the realm of possibilities, imagination becomes the catalyst for the extraordinary.
                 </p>
                 <ul class="flex space-x-4 sm:mt-0">
                   <li>
