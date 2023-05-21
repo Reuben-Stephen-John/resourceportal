@@ -3,6 +3,7 @@ import DisplayData from "./displayData.component";
 import { useParams } from 'react-router-dom';
 import axios from "axios";
 
+
 const ModuleBar = () => {
   const [courseData,setCourseData]=useState(null);
   const [modulesData,setModulesData]=useState([]);
@@ -81,10 +82,8 @@ const ModuleBar = () => {
         {/* Displaying Module Data here */}
         <div className="p-4 sm:ml-64">
           <div className="dark:bg-gray-900 p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-            <DisplayData
-              moduleId={selectedModuleId}
-              modulesData={modulesData}
-            />
+            <DisplayData moduleId={selectedModuleId}
+              modulesData={modulesData}/>
 
             <div className="flex justify-center">
               <div className="inline-flex rounded-md shadow-sm" role="group">

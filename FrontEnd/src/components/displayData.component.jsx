@@ -1,5 +1,3 @@
-import Tabs from './tabs.component'
-
 const DisplayData = ({ moduleId, modulesData }) => {
   const selectedModule = modulesData.find((module) => module.id === moduleId);
 
@@ -8,15 +6,16 @@ const DisplayData = ({ moduleId, modulesData }) => {
   }
 
   return (
-    <><Tabs /><section class=" dark:bg-gray-900 bg-white dark:bg-gray-900">
-      <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div class="max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400">
-          <div>
-            <h3>{selectedModule.module_name}</h3>
-            <p>{selectedModule.topics}</p>
-          </div>
-          <div>{/* next previous buttons here */}</div>
-          {/* <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
+    <>
+      <section class=" dark:bg-gray-900 bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <div class="max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400">
+            <div>
+              <h3>{selectedModule.module_name}</h3>
+              <p>{selectedModule.topics}</p>
+            </div>
+            <div>{/* next previous buttons here */}</div>
+            {/* <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
       {title}
     </h2>
     <p class="mb-4 font-light">
@@ -72,7 +71,7 @@ const DisplayData = ({ moduleId, modulesData }) => {
       tail when flipping a coin.
       <br />
       <br /> The sample space refers to the set of all possible outcomes
-      of an experiment, while a probability distribution assigns
+      of an experiment, while a probability distributioncclea assigns
       probabilities to different outcomes or events. Statistical analysis
       encompasses a wide range of methods and techniques, including
       descriptive statistics, inferential statistics, hypothesis testing,
@@ -109,9 +108,10 @@ const DisplayData = ({ moduleId, modulesData }) => {
       solid understanding of probability and statistics is essential for
       navigating the complexities of the modern world.
     </p> */}
+          </div>
         </div>
-      </div>
-    </section></>
+      </section>
+    </>
   );
 };
 
