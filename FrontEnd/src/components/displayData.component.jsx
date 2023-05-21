@@ -10,9 +10,8 @@ const DisplayData = ({ moduleId, modulesData }) => {
       <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div class="max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400">
           <div>
-            <h3>{selectedModule.title}</h3>
-            <p>{selectedModule.text}</p>
-            <a href={selectedModule.link}>Link</a>
+            <h3>{selectedModule.module_name}</h3>
+            <p>{selectedModule.topics}</p>
           </div>
           <div>{/* next previous buttons here */}</div>
           {/* <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
