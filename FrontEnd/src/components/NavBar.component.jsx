@@ -10,7 +10,7 @@ const navigation = [
 ];
 
 export default function NavBar({ courses }) {
-  let barType, barColor;
+  let barType;
   if (courses === "1") {
     barType = `fixed inset-x-0 top-0 z-50 bg-gray-50 dark:bg-gray-900`;
   } else {
@@ -29,14 +29,14 @@ export default function NavBar({ courses }) {
             aria-label="Global"
           >
             <div className="flex lg:flex-1">
-              <a href="#" className="-m-1.5 p-1.5">
+              <Link to="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
                 <img
                   className="h-8 w-auto"
                   src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                   alt=""
                 />
-              </a>
+              </Link>
             </div>
             <div className="flex lg:hidden">
               <button
