@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom'
 import HomePage from './page/homepage.page'
 import CoursesPage from './page/courses.page'
 import SearchforCourses from './page/searchCourses.page'
-import { useEffect, useState } from 'react'
 import FourOFour from './page/404.pages'
 import AboutPage from './page/about.pages'
 
