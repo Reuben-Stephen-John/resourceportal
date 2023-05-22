@@ -15,7 +15,7 @@ const DisplayData = ({ moduleId, modulesData }) => {
                 {selectedModule.module_name}
               </h3>
               <p className="py-4">{selectedModule.topics}</p>
-              <div className="video-container">
+              {/* <div className="video-container">
                 {selectedModule.links ? (
                   <iframe
                     width="560"
@@ -27,7 +27,7 @@ const DisplayData = ({ moduleId, modulesData }) => {
                     allowFullScreen
                   ></iframe>
                 ) : null}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
