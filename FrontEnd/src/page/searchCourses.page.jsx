@@ -1,6 +1,7 @@
 import NavBar from "../components/NavBar.component";
 import CourseCard from "../components/courseCard.component";
 import React, { useState, useEffect } from "react";
+// import Loader from "../components/loader.component";
 import axios from "axios";
 
 export default function SearchforCourses() {
@@ -22,7 +23,7 @@ export default function SearchforCourses() {
   const searchCourses = async () => {
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/courses/?search=${searchQuery}`
+        `http://127.0.0.1:8000/api/courses/query/?search=${searchQuery}`
       );
       setSearchResults(response.data);
     } catch (error) {
@@ -39,9 +40,9 @@ export default function SearchforCourses() {
       <div className="bg-white">
         <NavBar />
 
-        <div className="relative isolate px-6 pt-1 lg:px-8">
+        <div className="relative px-6 pt-1 isolate lg:px-8">
           <div
-            className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-0"
+            className="absolute inset-x-0 overflow-hidden -top-40 -z-10 transform-gpu blur-3xl sm:-top-0"
             aria-hidden="true"
           >
             <div
@@ -52,7 +53,7 @@ export default function SearchforCourses() {
               }}
             />
           </div>
-          <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+          <div className="max-w-2xl py-32 mx-auto sm:py-48 lg:py-56">
             <div className="text-center">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                 Looking for Lectures, Notes or Don't Know Where to Start?
@@ -61,7 +62,7 @@ export default function SearchforCourses() {
                 Search for your Course Name or Course Code below in the search
                 box to find lectures, and notes; and get started right now!
               </p>
-              <div className="mt-10 flex items-center justify-center gap-x-6">
+              <div className="flex items-center justify-center mt-10 gap-x-6">
                 <form className="flex items-center">
                   <label form="simple-search" className="sr-only">
                     Search
@@ -115,7 +116,7 @@ export default function SearchforCourses() {
                 </form>
               </div>
               <div className="flex justify-center px-5 py-5">
-                <div className="grid sm:grid-cols-3 gap-4">
+                <div className="grid gap-4 sm:grid-cols-3">
                     {searchResults.map((course) => (
                       <div key={course.id}>
                          <CourseCard courseCode={course.course_code} courseTitle={course.course_name} courseId ={course.id}/>

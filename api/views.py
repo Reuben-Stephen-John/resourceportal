@@ -1,11 +1,16 @@
-from rest_framework import generics,permissions
-from courses.models import Course,Module
+
+# Create your views here.
+
+from .models import Course,Module
 from .serializers import CourseSerializer,ModuleSerializer,CourseModuleSerializer
 from django.db.models import Q
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
+from rest_framework import generics,permissions
 from rest_framework.views import APIView
+from rest_framework.decorators import api_view,permission_classes
 
+## Class Based Views
 class CourseSearchAPIView(APIView):
     def get(self, request):
         query = request.query_params.get('search', '')
@@ -36,4 +41,12 @@ class CourseModule(generics.RetrieveAPIView):
 
 
 
-
+## Function Based Views
+@api_view(['GET'])
+def get_routes(request):
+    routes = [
+        "api/courses/",
+        "api/courses/query/?search=",
+        "api/courses/id/",
+    ]
+    return Response(routes)

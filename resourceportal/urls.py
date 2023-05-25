@@ -15,12 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from courses import views
+from api import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-
     #API
+    path('',views.get_routes,name = "get_routes"),
     path('api/', include('api.urls')),
 ]
